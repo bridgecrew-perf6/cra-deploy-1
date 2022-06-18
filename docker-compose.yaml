@@ -1,0 +1,8 @@
+version: '3'
+services:
+  simple:
+    build:
+      context: .
+      dockerfile: node.Dockerfile
+    ports:
+      - 4000:80

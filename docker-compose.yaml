@@ -12,3 +12,13 @@ services:
       dockerfile: router.Dockerfile
     ports:
       - 3000:80
+  oss:
+    build:
+      context: .
+      dockerfile: oss.Dockerfile
+      args:
+        - ACCESS_KEY_ID
+        - ACCESS_KEY_SECRET
+        - ENDPOINT=oss-cn-beijing.aliyuncs.com
+    ports:
+      - 8000:80

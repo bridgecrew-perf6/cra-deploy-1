@@ -10,13 +10,19 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "ali-oss": "^6.16.0",
+    "p-queue": "^7.2.0",
+    "readdirp": "^3.6.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "oss:cli": "ossutilmac64 cp -rf --meta Cache-Control:no-cache build oss://deploy-oss-train/ && ossutilmac64 cp -rf --meta Cache-Control:max-age=31536000 build/static oss://deploy-oss-train/static",
+    "oss:script": "node scripts/uploadOSS.mjs",
+    "oss:prune": "node scripts/deleteOSS.mjs"
   },
   "eslintConfig": {
     "extends": [

@@ -2,7 +2,7 @@
  * @Author: 朽木白
  * @Date: 2022-06-19 17:18:29
  * @LastEditors: 1547702880@qq.com
- * @LastEditTime: 2022-06-19 18:20:40
+ * @LastEditTime: 2022-06-20 21:22:19
  * @Description:
  */
 import OSS from 'ali-oss';
@@ -15,8 +15,8 @@ const queue = new PQueue({ concurrency: 10 });
 
 const client = new OSS({
   region: 'oss-cn-beijing',
-  accessKeyId: 'LTAI5t5rdguPBX9hdEpjEpRU',
-  accessKeySecret: '295mUfVuIht2gqexAGlwxNuDyPVLad',
+  accessKeyId: process.env.ACCESS_KEY_ID,
+  accessKeySecret: process.env.ACCESS_KEY_SECRET,
   bucket: 'deploy-oss-train',
 });
 

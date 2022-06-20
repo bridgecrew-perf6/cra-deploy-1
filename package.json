@@ -21,6 +21,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "oss:cli": "ossutilmac64 cp -rf --meta Cache-Control:no-cache build oss://deploy-oss-train/ && ossutilmac64 cp -rf --meta Cache-Control:max-age=31536000 build/static oss://deploy-oss-train/static",
+    "oss:rclone": "rclone copy --exclude 'static/**' --header 'Cache-Control: no-cache' build alioss:/deploy-oss-train --progress && rclone copy --header  'Cache-Control: max-age=31536000' build/static alioss:/deploy-oss-train --progress",
     "oss:script": "node scripts/uploadOSS.mjs",
     "oss:prune": "node scripts/deleteOSS.mjs"
   },
